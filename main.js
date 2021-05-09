@@ -1,8 +1,39 @@
+
+
 // Defining text characters for the empty and full hearts for you to use later.
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
+
 // Your JavaScript code goes here!
+
+
+//EVENT LISTENER ON LIKE GLYPHS
+window.addEventListener('DOMContentLoaded', (event) => {
+  const likeGlyphs = document.querySelectorAll("span.like-glyph")
+  for (const likeGlyph of likeGlyphs) {
+    likeGlyph.addEventListener ("click", (e) => {
+      clickLike(e)
+    })
+  }
+})
+
+function clickLike(e) {
+      mimicServerCall()
+        .then ((response) => {
+            if (e.target.textContent === '♡'){
+              e.target.textContent = '♥';
+              e.target.style.color = "red"; }
+                else {e.target.textContent ='♡'
+              } 
+               
+        })  
+}
+
+
+
+//   console.log('DOM fully loaded and parsed');
+// });
 
 
 
