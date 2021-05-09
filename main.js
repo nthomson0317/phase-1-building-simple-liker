@@ -1,5 +1,3 @@
-
-
 // Defining text characters for the empty and full hearts for you to use later.
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
@@ -9,14 +7,20 @@ const FULL_HEART = '♥'
 
 
 //EVENT LISTENER ON LIKE GLYPHS
-window.addEventListener('DOMContentLoaded', (event) => {
+// window.addEventListener('DOMContentLoaded', (event) => {
+
+  const errorModal = document.querySelector("div#modal")
+  errorModal.hidden = true;
+  errorModal.className = "hidden"
+  
+  
   const likeGlyphs = document.querySelectorAll("span.like-glyph")
   for (const likeGlyph of likeGlyphs) {
     likeGlyph.addEventListener ("click", (e) => {
       clickLike(e)
     })
   }
-})
+// })
 
 function clickLike(e) {
       mimicServerCall()
@@ -28,6 +32,7 @@ function clickLike(e) {
               } 
                
         })  
+        .catch(() => {})
 }
 
 
