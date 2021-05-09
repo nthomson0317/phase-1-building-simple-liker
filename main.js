@@ -32,7 +32,14 @@ function clickLike(e) {
               } 
                
         })  
-        .catch(() => {})
+        .catch(() => {
+          setTimeout(function() {
+          errorModal.hidden = false
+          errorModal.textContent = "Random server error. Try again."
+          
+
+          }, 3000)
+        })
 }
 
 
